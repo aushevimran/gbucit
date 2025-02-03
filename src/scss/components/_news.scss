@@ -65,9 +65,6 @@
     font-size: 14px;
     color: #333;
     margin-bottom: 15px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Оставить 3 строки */
-    -webkit-box-orient: vertical;
     overflow: hidden;
     flex-grow: 1;
   }
