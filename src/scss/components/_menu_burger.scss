@@ -1,0 +1,80 @@
+.menu {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../public/maxresdefault.jpg"); /* Путь к фоновому изображению */
+  transition: left 0.5s ease;
+
+  background-position: 110%;
+  background-size: cover;
+}
+
+.menu.active {
+  height: 100vh;
+  left: 0;
+}
+
+.close-button:hover {
+  color: #1abc9c;
+}
+.menu-content {
+  margin-top: 7%;
+  margin-left: 80px;
+
+  display: flex;
+}
+
+.line {
+  width: 1px;
+  height: 410px;
+  background: #fff;
+}
+
+.menu-content nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-top: 50px;
+}
+.menu-content nav {
+  width: 60%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.menu-content--left_block {
+  width: 40%;
+
+  color: #f7f7f7;
+}
+
+.menu-content nav ul li {
+  margin: 15px 0;
+}
+
+.menu-content nav ul li a {
+  text-decoration: none;
+  color: #f7f7f7;
+  font-size: 30px;
+  font-family: "FuturaPT", Arial, sans-serif;
+  line-height: 1.6;
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+}
+
+.menu-content nav ul li a span {
+  font-size: 29px;
+}
+
+.menu-content ul li a:hover {
+  color: #1abc9c;
+}
+
+.menu__sidebar--bottom {
+  text-align: end;
+}

@@ -1,0 +1,29 @@
+.svglogotext {
+  width: 400px;
+  height: 400px;
+}
+
+text {
+  fill: white;
+
+  font-size: 23px;
+  font-family: monospace;
+  font-style: normal;
+}
+
+/* Анимация вращения */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Контейнер с анимацией */
+.rotating-text {
+  display: inline-block;
+  animation: rotate 15s linear infinite; /* Вращение быстрее: 8 секунд */
+  transform-origin: center; /* Центр вращения */
+}

@@ -1,0 +1,40 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .container {
+    flex-grow: 1;
+    color: #fff;
+  }
+
+  &__bg {
+    flex-grow: 1;
+
+    margin: 10% auto;
+
+    text-align: center;
+  }
+
+  &__title {
+    color: aliceblue;
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h5 {
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 30px;
+    }
+  }
+
+  &__bottom {
+    text-align: end;
+    color: aqua;
+    padding: 10px;
+  }
+}
