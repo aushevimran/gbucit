@@ -6,10 +6,6 @@
 
   background-color: #222;
   color: #fff;
-
-  // @media (max-width: 800px) {
-  //   text-align: center;
-  // }
 }
 
 .footer-container {
@@ -22,11 +18,19 @@
   margin: 0 auto;
 
   padding: 30px 0px;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 .footer-block {
   flex: 1;
   min-width: 300px;
   margin: 10px;
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 }
 .footer-block h3 {
   font-size: 20px;
@@ -37,9 +41,15 @@
 .footer-info {
   text-align: left;
 
-  // @media (max-width: 800px) {
-  //   text-align: center;
-  // }
+  p:last-child {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 .footer-links ul {
   list-style: none;
@@ -79,4 +89,13 @@
   a {
     color: #5f5f5f;
   }
+}
+
+#tsparticles {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1; // Убираем фон под контент
 }

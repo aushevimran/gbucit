@@ -1,12 +1,13 @@
-@import "./main";
-@import "./sidebar";
-@import "./menu_burger";
-@import "./feedback";
-@import "./header";
-@import "./services";
-@import "./news";
-@import "../../components/about_us/about.scss";
-@import "../../components/account/account.scss";
+@use "./main";
+@use "./sidebar";
+@use "./menu_burger";
+@use "./feedback";
+@use "./header";
+@use "./services";
+@use "./news";
+@use "../../components/about_us/about.scss";
+@use "../../components/account/account.scss";
+@use "../../components/docs/docs.scss";
 
-@import "./footer";
-@import "./rta";
+@use "./footer";
+@use "./rta";

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 
 const API_URL = "https://679c47c233d3168463264b38.mockapi.io/DataForm";
@@ -11,32 +12,31 @@ const Feedback = () => {
     position: "",
     fullPost: "",
     message: "",
+    date: new Date().toISOString().split("T")[0],
   });
-  const [users, setUsers] = useState([]);
-  const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    fetchUsers();
-  }, []);
-
-  const fetchUsers = async () => {
-    try {
-      const response = await axios.get(API_URL);
-      setUsers(response.data);
-    } catch (error) {
-      console.error("Ошибка загрузки пользователей:", error);
-    }
-  };
+  const [message, setMessage] = useState(true); // сообщение отправлено
+  const [captchaValue, setCaptchaValue] = useState(null); // google recaptcha
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleCaptchaChange = (value) => {
+    setCaptchaValue(value); // Сохраняем значение CAPTCHA
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!captchaValue) {
+      alert("Подтвердите, что вы не робот!");
+      return; // google recaptcha
+    }
+
     try {
       await axios.post(API_URL, formData);
-      setMessage("✅ Пользователь добавлен!");
+      setMessage(!message);
       setFormData({
         name: "",
         phone: "",
@@ -45,11 +45,13 @@ const Feedback = () => {
         fullPost: "",
         message: "",
       });
-      fetchUsers(); // Обновляем список пользователей
+      setIsVisible(!isVisible);
     } catch (error) {
       setMessage("❌ Ошибка при отправке данных");
     }
   };
+
+  //////////////// открыть закрыть форму
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -59,7 +61,19 @@ const Feedback = () => {
 
   return (
     <div className="feedback">
-      <button onClick={() => handlerClick()} class="apply-button">
+      <div
+        className={
+          message === true ? "feedback_messege" : "feedback_messege--open"
+        }
+      >
+        <div className="toggle-button" onClick={() => setMessage(!message)}>
+          Х
+        </div>
+        <p>✅ "Ваша заявка принята✅</p>
+        <p>Наш специалист свяжется с вами в ближайшее время.</p>
+      </div>
+
+      <button onClick={() => handlerClick()} className="apply-button">
         Оставить заявку
       </button>
 
@@ -222,21 +236,15 @@ const Feedback = () => {
             Нажимая на кнопку "Отправить" вы соглашаетесь с нашей{" "}
             <a href="/#">Политикой конфиденциальности</a>
           </p>
+          <ReCAPTCHA
+            sitekey="6LdoxtcqAAAAAEBTD0nvil0cMqTmquAHD1pv8vzh" // Замените на свой ключ
+            onChange={handleCaptchaChange}
+          />
           <button className="submit-button" type="submit">
             Отправить
           </button>
         </form>
         {message && <p>{message}</p>}
-
-        <h3>Список пользователей</h3>
-        <ul>
-          {users.map((user) => (
-            <li key={user.id}>
-              {user.name} {user.phone} {user.position} {user.fullPost} {message}{" "}
-              ({user.email})
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
   );

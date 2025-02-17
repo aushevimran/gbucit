@@ -25,27 +25,64 @@
   transform: translateY(0); /* Возвращается в исходное положение */
 }
 
+.feedback {
+  margin: 10px 0;
+}
+
+.feedback_messege {
+  display: none;
+}
+
+.feedback_messege--open {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 300;
+  transform: translate(-50%, -50%);
+
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  padding: 10px;
+  text-align: center;
+
+  overflow: hidden;
+}
+
 .feedback__toggle-IsVisivle {
   display: none;
 }
 
 .feedback__toggle-Visivle {
   position: absolute;
-  min-width: 250px;
-  width: 25vw;
-  height: auto;
+  top: 50%;
+  left: 50%;
+  z-index: 200;
+  transform: translate(-50%, -50%);
 
-  left: 35%;
-  top: 5%;
+  min-width: 300px;
+  max-width: 25%;
 
-  margin: 0 auto;
   padding: 20px;
+  text-align: left;
+
+  overflow: hidden;
+
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   opacity: 1;
   animation: ani 0.8s forwards;
+
+  @media (max-width: 768px) {
+    margin-top: 25px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 28%;
+  }
 }
 
 @keyframes ani {
@@ -88,6 +125,10 @@
 label {
   font-weight: normal;
   margin-bottom: 5px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 }
 
 input,
@@ -102,6 +143,10 @@ textarea {
   &:focus {
     border-color: #007bff;
     outline: none;
+  }
+  @media (max-width: 768px) {
+    padding: 5px;
+    font-size: 12px;
   }
 }
 
@@ -128,6 +173,9 @@ textarea {
 
   &:hover {
     background: #0056b3;
+  }
+  @media (max-width: 768px) {
+    padding: 8px;
   }
 }
 

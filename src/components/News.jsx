@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import Logo from "../assets/img/logo.jpg";
 
 const News = () => {
   const [selectedNews, setSelectedNews] = useState(null);
@@ -16,7 +15,7 @@ const News = () => {
 
   return (
     <div className="news">
-      <h1 className="news-head">Новости</h1>
+      <div className="news-head head-title">Новости</div>
       <div className="news-container">
         {news.map((news, index) => (
           <div
@@ -24,12 +23,19 @@ const News = () => {
             className="news-card"
             onClick={() => setSelectedNews(news)}
           >
-            <img src={news.image} alt={news.title} className="news-image" />
+            <img
+              width="300px"
+              height="200px"
+              src={news.image}
+              alt={news.title}
+              className="news-image"
+            />
             <div className="news-content">
               <div className="news-title">{news.title}</div>
-              <div className="news-date">{news.date}</div>
+
               <div className="news-text">{news.shortContent}</div>
-              <div class="news-button">Читать далее</div>
+              <div className="news-date">{news.date}</div>
+              <div className="news-button">Читать далее</div>
             </div>
           </div>
         ))}

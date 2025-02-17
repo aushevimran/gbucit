@@ -13,7 +13,7 @@ const Sidebar = () => {
   return (
     <div>
       <div className="sidebar">
-        <div class="top">ГБУ ЦИТ - ©2025 </div>
+        <div className="top">ГБУ ЦИТ - ©2025 </div>
         <div className="middle" onClick={toggleMenu}>
           <div className={`burger ${menuActive ? "active" : ""}`}>
             <div></div>
@@ -21,12 +21,12 @@ const Sidebar = () => {
             <div></div>
           </div>
         </div>
-        <div class="bottom">
+        <div className="bottom">
           <nav className="social-links">
             <ul>
               <li>
                 <a
-                  href="https://telegram.org"
+                  href="https://t.me/gbucit06"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Telegram"
@@ -44,7 +44,7 @@ const Sidebar = () => {
               </li>
               <li>
                 <a
-                  href="https://vk.com"
+                  href="https://vk.com/?u=2&to=L2didWNpdA--"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="VK"
@@ -132,7 +132,7 @@ const Sidebar = () => {
                 </a>
               </li>
               <li>
-                <a href="/#">
+                <a href="/documents">
                   <span>09</span> Документы
                 </a>
               </li>

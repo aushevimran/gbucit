@@ -1,26 +1,26 @@
 .main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 
   .container {
-    flex-grow: 1;
     color: #fff;
   }
 
   &__bg {
-    flex-grow: 1;
-
-    margin: 10% auto;
-
     text-align: center;
+    margin-top: 16%;
   }
 
   &__title {
     color: aliceblue;
 
     h1 {
-      font-size: 3rem;
+      font-size: 42px;
+
+      @media (max-width: 920px) {
+        font-size: 32px;
+      }
     }
 
     h5 {

@@ -1,13 +1,26 @@
 .sidebar {
   width: 70px;
-  height: 100vh;
-  background-color: #121212;
+  min-height: 100vh;
+  // background-color: #121212;
+  background-color: #060606;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   position: fixed;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    position: relative;
+
+    width: auto;
+    min-height: 60px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .sidebar .top {
@@ -18,10 +31,26 @@
 
   writing-mode: vertical-rl;
   transform: rotate(180deg);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .middle {
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    order: 3;
+
+    margin-right: 30px;
+  }
+
+  @media (max-width: 480px) {
+    order: 3;
+
+    margin-right: 15px;
+  }
 }
 
 .sidebar .bottom {
@@ -31,16 +60,35 @@
 
   flex-basis: 20%;
   line-height: 55px;
+
+  @media (max-width: 768px) {
+    display: block;
+    line-height: 0;
+
+    order: 1;
+
+    margin-left: 15px;
+  }
+  @media (max-width: 480px) {
+    flex-basis: 30%;
+  }
+}
+
+.sidebar .bottom nav ul {
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 .sidebar .bottom a {
   text-decoration: none;
-  color: white;
+  color: #fff;
   font-size: 18px;
 }
 
 .sidebar .bottom a:hover {
-  color: #1abc9c;
+  color: #d0f500;
 }
 
 .burger {
@@ -52,7 +100,7 @@
 .burger div {
   width: 40px;
   height: 3px;
-  background-color: white;
+  background-color: #fff;
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 .burger.active {
@@ -77,4 +125,16 @@
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.social-links ul li {
+  @media (max-width: 920px) {
+    text-align: center;
+  }
+}
+
+.menu-content--left_block {
+  @media (max-width: 768px) {
+    display: none;
+  }
 }

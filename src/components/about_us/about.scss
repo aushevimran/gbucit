@@ -1,50 +1,84 @@
-.about-top {
-  display: flex;
-  justify-content: space-between;
+.about {
+  background-color: #1b1d27;
 
-  border-top: 1px solid #fff;
-  padding-top: 60px;
+  &__row {
+    display: flex;
+    align-items: center;
 
-  &__text_description {
-    color: #f7f7f7;
-    font-size: 22px;
-    font-family: emoji;
+    width: 95%;
+    margin: 10px auto;
 
-    line-height: 1.3;
-
-    text-indent: 25px;
-
-    margin: 10px 0;
-  }
-
-  &__blocks {
-    width: 75%;
+    @media (max-width: 1024px) {
+      display: block;
+    }
   }
 }
 
 .head-title {
-  color: #c4c4c4;
-  font-size: 16px;
-  line-height: 1.55;
-  font-weight: 400;
-  letter-spacing: 1.1px;
+  font-size: 26px;
+  font-family: "FuturaPT", Arial, sans-serif;
+  line-height: 1.6;
+  text-align: left;
+  color: rgb(168, 168, 168);
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.about-top {
+  background-color: #f4f5fa;
+  border-radius: 32px;
+  color: #fff;
+  margin-bottom: 24px;
+  overflow: hidden;
+  padding: 48px;
+  position: relative;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 }
 
 .about__text_bottom {
-  margin: 100px auto;
-  padding: 50px 10px;
-
-  color: #c4c4c4;
-  font-size: 16px;
-
-  text-indent: 25px;
-  text-align: center;
-
-  border-bottom: 1px solid #fff;
+  background-color: #f4f5fa;
+  border-radius: 32px;
+  color: #fff;
+  margin-bottom: 24px;
+  overflow: hidden;
+  padding: 48px;
+  position: relative;
 }
 
-.about-top__text_description--link {
-  //   text-decoration: none;
-  color: #f7f7f7;
+.about-top__text_description {
+  font-family: "Onest", sans-serif;
+  font-size: 20px;
+  line-height: 26px;
+  color: #191816;
   cursor: pointer;
+
+  text-indent: 20px;
+}
+
+.about__text_bottom {
+  text-align: center;
+  font-family: "Onest", sans-serif;
+  font-size: 20px;
+  line-height: 26px;
+  color: #191816;
+  cursor: pointer;
+}
+
+.about--arrow {
+  margin: 0 3px;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    text-align: center;
+    svg {
+      transform: rotate(90deg);
+      width: 40px;
+    }
+  }
 }

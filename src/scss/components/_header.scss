@@ -5,4 +5,41 @@
 
   padding: 10px;
   margin-left: 80px;
+
+  @media (max-width: 768px) {
+    margin-left: 15px;
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 0;
+  }
+
+  &__logo {
+    @media (max-width: 920px) {
+      text-align: center;
+    }
+    a img {
+      @media (max-width: 480px) {
+        width: 45px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.header-menu__additional-wrap {
+  @media (max-width: 920px) {
+    text-align: center;
+  }
+}
+
+.menu > .header {
+  @media (max-width: 768px) {
+    margin-left: 15px;
+    margin-top: 10%;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 16%;
+  }
 }

@@ -1,88 +1,129 @@
 .news {
-  max-width: 1400px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
+  background: #fafafa;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-  .news-head {
-    font-size: 26px;
-    font-family: "FuturaPT", Arial, sans-serif;
-    line-height: 1.6;
-    margin-bottom: 45px;
-    text-align: center;
-    color: rgb(74, 74, 74);
-  }
+  background-color: #1b1b1e;
+  overflow: hidden;
+
+  // width: 100%;
+  // height: 100%;
+  // background-image: url("../../../public/maxresdefault.jpg"); /* Путь к фоновому изображению */
+  // transition: left 0.5s ease;
+
+  // background-position: 110%;
+  // background-size: cover;
 
   .news-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 50px 0;
+    width: calc(100% - 150px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin: 0 auto;
+    padding: 20px 0;
   }
 
   .news-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
+    width: 379px;
+    text-align: center;
+
+    border-radius: 38px;
+    background-color: #14161f;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+
+    margin: 15px 5px;
+    padding: 15px 0px;
   }
 
   .news-card:hover {
-    transform: translateY(-5px); /* Анимация при наведении */
+    transform: translateY(-3px); /* Анимация при наведении */
   }
 
   .news-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+    border-radius: 26px;
+    background-color: #1abc9c;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-color: transparent;
+    border-style: solid;
+
+    margin: 0 5px;
   }
 
   .news-content {
-    padding: 15px;
+    padding: 15px 15px 0 15px;
     display: flex;
     flex-direction: column;
-    height: 173px;
+
+    min-height: 265px;
   }
 
   .news-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: "Onest", Arial, sans-serif;
+    line-height: 1.14;
+    font-weight: 600;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
   }
 
   .news-date {
     font-size: 14px;
     color: gray;
     display: block;
+
     margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   .news-text {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 15px;
+    color: #d4d4dd;
+    font-size: 16px;
+    font-family: "Onest", Arial, sans-serif;
+    line-height: 1.38;
+    font-weight: 400;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Количество строк */
+    -webkit-box-orient: vertical;
     overflow: hidden;
+    max-width: 343px;
+
     flex-grow: 1;
+    flex-shrink: 0;
+    align-content: center;
   }
+
   .news-button {
-    text-align: center;
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: background 0.3s;
+    color: #191816;
+    font-size: 16px;
+    font-family: "Onest", Arial, sans-serif;
+    line-height: 1.55;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: #1abc9c;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+      border-color 0.2s ease-in-out;
     cursor: pointer;
+    margin-top: 5px;
   }
 
   .news-button:hover {
     background-color: #0056b3;
+    color: #fff;
   }
 }
 
@@ -103,9 +144,28 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: 60%;
-  max-width: 600px;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 768px;
   position: relative;
+
+  overflow-y: auto;
+  max-height: 600px;
+
+  @media (max-width: 768px) {
+    max-height: 450px; /* Ограничение высоты */
+    overflow-y: auto; /* Вертикальный скролл при необходимости */
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 980px) {
+    max-height: 450px; /* Ограничение высоты */
+    width: 70%;
+    margin: 0 auto;
+  }
 
   .close-btn {
     position: absolute;
